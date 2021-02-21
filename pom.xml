@@ -15,8 +15,7 @@
         <!-- problem with murmurhash in 16 version -->
 <!--        <cz.cvut.kbss.jopa.version>0.16.2</cz.cvut.kbss.jopa.version>-->
         <cz.cvut.kbss.jopa.version>0.13.1</cz.cvut.kbss.jopa.version>
-        <!-- 8.2 is not working - cant cast current classes -->
-        <cz.cvut.kbss.jb4jsonld.version>0.6.0</cz.cvut.kbss.jb4jsonld.version>
+        <cz.cvut.kbss.jb4jsonld.version>0.8.4</cz.cvut.kbss.jb4jsonld.version>
         <cz.cvut.kbss.s-pipes.forms.version>0.3.0</cz.cvut.kbss.s-pipes.forms.version>
         <org.eclipse.rdf4j.version>3.4.4</org.eclipse.rdf4j.version>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
