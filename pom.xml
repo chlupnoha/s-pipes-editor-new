@@ -13,8 +13,8 @@
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <!-- problem with murmurhash in 16 version -->
-<!--        <cz.cvut.kbss.jopa.version>0.16.2</cz.cvut.kbss.jopa.version>-->
-        <cz.cvut.kbss.jopa.version>0.13.1</cz.cvut.kbss.jopa.version>
+        <cz.cvut.kbss.jopa.version>0.16.2</cz.cvut.kbss.jopa.version>
+<!--        <cz.cvut.kbss.jopa.version>0.13.1</cz.cvut.kbss.jopa.version>-->
         <!-- 8.2 is not working - cant cast current classes -->
         <cz.cvut.kbss.jb4jsonld.version>0.6.0</cz.cvut.kbss.jb4jsonld.version>
         <cz.cvut.kbss.s-pipes.forms.version>0.3.0</cz.cvut.kbss.s-pipes.forms.version>
@@ -45,11 +45,31 @@
             <groupId>cz.cvut.kbss.jopa</groupId>
             <artifactId>jopa-api</artifactId>
             <version>${cz.cvut.kbss.jopa.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>cz.cvut.kbss.jopa</groupId>
             <artifactId>jopa-impl</artifactId>
             <version>${cz.cvut.kbss.jopa.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>cz.cvut.kbss.jopa</groupId>
@@ -58,11 +78,11 @@
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
+                    <artifactId>*</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
+                    <groupId>org.apache.logging.log4j</groupId>
+                    <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
