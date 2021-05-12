@@ -1,6 +1,7 @@
 package og_spipes.service;
 
 import og_spipes.model.spipes.ExecutionDTO;
+import og_spipes.model.spipes.TransformationDTO;
 import og_spipes.persistence.dao.ScriptDAO;
 import og_spipes.persistence.dao.TransformationDAO;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -90,6 +92,13 @@ public class SPipesExecutionService {
                 return null;
             }
         }).collect(Collectors.toList());
+    }
+
+    public void deleteExecution(String transformationURI) {
+        LOG.info("Remove transformation with URI: " + transformationURI);
+        TransformationDTO transformationDTO = transformationDAO.find(URI.create(transformationURI));
+        LOG.info("TransformationDTO: " + transformationDTO.getId());
+        transformationDAO.remove(transformationDTO);
     }
 
 }
