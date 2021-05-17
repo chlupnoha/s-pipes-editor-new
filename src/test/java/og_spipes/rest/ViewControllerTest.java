@@ -81,29 +81,28 @@ public class ViewControllerTest {
         Assertions.assertEquals(4, view.getNodes().size());
     }
 
-//    @Test
-//    @DisplayName("Get graph view of complicated script")
-//    public void testViewOfComplicatedScript() throws Exception {
-//        //TODO enforce some assertion
-//        File scriptPath = new File(scriptPaths + "/vfn-example/vfn-form-modules.ttl");
-//        MvcResult mvcResult = this.mockMvc.perform(post("/views/new")
-//                .content(
-//                        "{" +
-//                                "\"@type\":\"http://onto.fel.cvut.cz/ontologies/s-pipes/script-dto\"," +
-//                                "\"http://onto.fel.cvut.cz/ontologies/s-pipes/has-script-path\":\"" + scriptPath + "\"" +
-//                                "}"
-//                )
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .accept(MediaType.APPLICATION_JSON))
-//                .andDo(print())
-//                .andExpect(status().isOk())
-//                .andReturn();
-//
-//        String content = mvcResult.getResponse().getContentAsString();
-//
-//        View view = mapper.readValue(content, View.class);
-//        Assertions.assertEquals(36, view.getNodes().size());
-//    }
+    @Test
+    @DisplayName("Get graph view of complicated script")
+    public void testViewOfComplicatedScript() throws Exception {
+        File scriptPath = new File(scriptPaths + "/vfn-example/vfn-form-modules.ttl");
+        MvcResult mvcResult = this.mockMvc.perform(post("/views/new")
+                .content(
+                        "{" +
+                                "\"@type\":\"http://onto.fel.cvut.cz/ontologies/s-pipes/script-dto\"," +
+                                "\"http://onto.fel.cvut.cz/ontologies/s-pipes/has-script-path\":\"" + scriptPath + "\"" +
+                                "}"
+                )
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String content = mvcResult.getResponse().getContentAsString();
+
+        View view = mapper.readValue(content, View.class);
+        Assertions.assertEquals(36, view.getNodes().size());
+    }
 
     @Test
     @DisplayName("Get graph view with execution")
