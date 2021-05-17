@@ -6,6 +6,7 @@ import og_spipes.service.SPipesExecutionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,6 +30,11 @@ public class ExecutionController {
     @GetMapping(path = "/history")
     public List<ExecutionDTO> historyOfAllExecution() {
         return executionService.getAllExecution();
+    }
+
+    @PostMapping(path = "/remove")
+    public void removeExecution(@RequestBody String transformation) {
+        executionService.deleteExecution(transformation);
     }
 
     @PostMapping(path = "/history-module")
