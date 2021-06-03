@@ -1,4 +1,9 @@
 # baseURI: http://onto.fel.cvut.cz/ontologies/s-pipes-lib
+# imports: http://onto.fel.cvut.cz/ontologies/lib/module
+# imports: http://onto.fel.cvut.cz/ontologies/lib/module-external
+# imports: http://onto.fel.cvut.cz/ontologies/lib/sm-module-adapter
+# imports: http://onto.fel.cvut.cz/ontologies/lib/spin-function
+# imports: http://onto.fel.cvut.cz/ontologies/s-pipes
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,9 +12,8 @@
 
 <http://onto.fel.cvut.cz/ontologies/s-pipes-lib>
   rdf:type owl:Ontology ;
-  owl:imports <http://onto.fel.cvut.cz/ontologies/s-pipes> ;
   owl:imports <http://onto.fel.cvut.cz/ontologies/lib/module> ;
   owl:imports <http://onto.fel.cvut.cz/ontologies/lib/module-external> ;
   owl:imports <http://onto.fel.cvut.cz/ontologies/lib/spin-function> ;
-  owl:imports <http://onto.fel.cvut.cz/ontologies/lib/sm-module-adapter> ;
+  owl:imports <http://onto.fel.cvut.cz/ontologies/s-pipes> ;
 .

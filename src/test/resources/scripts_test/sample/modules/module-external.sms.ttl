@@ -19,31 +19,17 @@
   rdf:type owl:Ontology ;
 .
 
-sml:ApplyConstruct
-  rdfs:label "Apply Construct" ;
-  rdf:type sm:Module ;
-  rdfs:subClassOf sm:Modules .
-sml:BindBySelect
-  rdfs:label "Bind by select" ;
-  rdf:type sm:Module ;
-  rdfs:subClassOf sm:Modules .
+sml:ApplyConstruct 
+  rdf:type sm:Module .
+sml:BindBySelect 
+  rdf:type sm:Module .
 sml:BindWithConstant
-  rdfs:label "Bind with constant" ;
-  rdf:type sm:Module ;
-  rdfs:subClassOf sm:Modules .
+  rdf:type sm:Module .
 sml:ExportToRDFFile
-  rdfs:label "Export to RDF file" ;
-  rdf:type sm:Module ;
-  rdfs:subClassOf sm:Modules .
+  rdf:type sm:Module .
 sml:Merge
-  rdfs:label "Merge" ;
-  rdf:type sm:Module ;
-  rdfs:subClassOf sm:Modules .
+  rdf:type sm:Module .
 sml:PerformUpdate
-  rdfs:label "Perform update" ;
-  rdf:type sm:Module ;
-  rdfs:subClassOf sm:Modules .
+  rdf:type sm:Module .
 sml:ReturnRDF
-  rdfs:label "Return RDF" ;
-  rdf:type sm:Module ;
-  rdfs:subClassOf sm:Modules .
+  rdf:type sm:Module .

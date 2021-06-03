@@ -173,7 +173,7 @@ kbss-module:apply-construct-with-scrollable-cursor
       spl:predicate sml:constructQuery ;
       rdfs:comment "The construct queries with marker #${LIMIT_OFFSET}." ;
     ] ;
-  rdfs:comment "Runs one or more construct queries on the input triples. Queries are executed multiple times with scrollable cursor that is defined in queries by sparql constructs 'LIMIT ?limit' and 'OFFSET ?offset'. The output RDF will consist of the constructed triples and (unless sml:replace is true) the input triples." ;
+  rdfs:comment "Runs one or more construct queries (bound to sml:constructQuery) on the input triples. Queries are executed multiple times with scrollable cursor that is injected through query marker #${LIMIT_OFFSET}. The marker is replaced each time with appropriatei by sparql constructs 'LIMIT ?limit' and 'OFFSET ?offset'. Within each construct query The output RDF will consist of the constructed triples and (unless sml:replace is true) the input triples." ;
   rdfs:label "Apply construct with scrollable cursor" ;
 .
 kbss-module:bind-rdf-content-hash
@@ -200,6 +200,23 @@ kbss-module:construct-form-metadata
       rdfs:comment "Replace context flag" ;
     ] ;
   rdfs:label "Construct form metadata" ;
+.
+kbss-module:merge-form-metadata
+  rdf:type sm:Module ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate sml:replace ;
+      spl:valueType xsd:boolean ;
+      rdfs:comment "Replace context flag" ;
+    ] ;
+  spin:constraint [
+      rdf:type spl:Argument ;
+      spl:predicate kbss-module:execution-id ;
+      spl:valueType xsd:string ;
+      rdfs:comment "Execution id that will be used to constract quesiont IRIs" ;
+    ] ;
+  rdfs:label "Merge form metadata" ;
+  rdfs:comment "Inputs are sample form and Q&A model. Questions from both models are remapped to new IRIs based on question origin combined with executionId." ;
 .
 kbss-module:deploy
   rdf:type sm:Module ;

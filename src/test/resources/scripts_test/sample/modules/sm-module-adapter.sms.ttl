@@ -37,6 +37,9 @@ kbss-module:cli
 kbss-module:construct-form-metadata
   rdfs:subClassOf sm:kbss-adapter-module ;
 .
+kbss-module:merge-form-metadata
+  rdfs:subClassOf sm:kbss-adapter-module ;
+.
 kbss-module:deploy
   rdfs:subClassOf sm:kbss-adapter-module ;
 .
